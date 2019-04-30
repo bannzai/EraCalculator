@@ -10,6 +10,7 @@ This example is Calculates what year of 平成 was when the 令和 was 平成.
 let converted = EraType.令和.convert(to: EraType.平成)
 print(converted.eraType) // 平成
 print(converted.year) // 31
+print(converted) // 平成 31年
 ```
 
 ## LICENSE
