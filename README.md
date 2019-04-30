@@ -4,13 +4,14 @@ So, in Japan change era. This libray is my memorial library.
 
 ## Usage
 EraCalculator can convert other Era years.
-This example is Calculates what year of 平成 was when the 令和 was 平成.
+This example is Calculates what year of 大化 was when the 平成 was 大化.
 
 ```swift
-let converted = EraType.令和.convert(to: EraType.平成)
-print(converted.eraType) // 平成
-print(converted.year) // 31
-print(converted) // 平成 31年
+let expected = Era(eraType: .大化, year: 1345)
+let got = EraType.平成.convert(to: EraType.大化)
+XCTAssertEqual(got.eraType, expected.eraType)
+XCTAssertEqual(got.year, expected.year)
+XCTAssertEqual(got.description, "大化 1345年")
 ```
 
 ## LICENSE
