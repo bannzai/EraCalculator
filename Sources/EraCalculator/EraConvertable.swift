@@ -1,5 +1,5 @@
 //
-//  EraType+Function.swift
+//  EraConvertable.swift
 //  EraCalculator
 //
 //  Created by Yudai.Hirose on 2019/04/30.
@@ -7,28 +7,14 @@
 
 import Foundation
 
-
-public struct Era {
-    public let eraType: EraType
-    public let year: Int
-    
-    init(
-        eraType: EraType,
-        year: Int
-        ) {
-        self.eraType = eraType
-        self.year = year
-    }
-}
-
-extension Era: CustomStringConvertible {
-    public var description: String {
-        return "\(eraType.gengo) \(year)年"
-    }
-}
-
 public protocol EraConvertable {
     var compareYear: Int { get }
+}
+
+extension Era: EraConvertable {
+    public var compareYear: Int {
+        return eraType.startYear + year - 1
+    }
 }
 
 extension Date: EraConvertable {
@@ -47,8 +33,7 @@ extension EraType: EraConvertable {
     }
 }
 
-// MARK: - Main Functions
-extension EraType {
+extension EraConvertable {
     fileprivate func convert(with year: Int) -> EraType {
         return EraType
             .allCases
