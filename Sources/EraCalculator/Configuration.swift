@@ -18,7 +18,6 @@ public struct Configuration {
 }
 
 var defaultConfiguration = Configuration()
-
 public func setConfiguration(_ configuration: Configuration) {
     defaultConfiguration = configuration
 }
