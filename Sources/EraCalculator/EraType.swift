@@ -255,6 +255,7 @@ public enum EraType: Int, CaseIterable {
     case 大正
     case 昭和
     case 平成
+    case 令和
 }
 
 extension EraType {
@@ -513,6 +514,7 @@ extension EraType {
         case .大正:    return 1912
         case .昭和:    return 1926
         case .平成:    return 1989
+        case .令和:    return 2019
         }
     }
     
@@ -765,6 +767,7 @@ extension EraType {
         case .大正:    return 1926
         case .昭和:    return 1989
         case .平成:    return 2019
+        case .令和: fatalError("Unknown end")
         }
     }
     
@@ -1028,6 +1031,7 @@ extension EraType {
         case .大正:    return (month: 7, day: 30)
         case .昭和:    return (month: 12, day: 25)
         case .平成:    return (month: 1, day: 8)
+        case .令和:    return (month: 5, day: 1)
         }
     }
 }
