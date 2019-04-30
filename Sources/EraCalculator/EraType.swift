@@ -259,6 +259,12 @@ public enum EraType {
 }
 
 extension EraType {
+    var name: String {
+        return "\(self)"
+    }
+}
+
+extension EraType {
     var start: Int {
         switch self {
         case .大化:    return 645
