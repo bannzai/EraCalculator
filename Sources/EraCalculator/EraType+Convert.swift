@@ -46,14 +46,14 @@ extension EraType {
     fileprivate func convert(with year: Int) -> EraType {
         return EraType
             .allCases
-            .filter { $0.startYear > year }
+            .filter { $0.compareYear == year }
             .first!
     }
-    public func convert(for eraType: EraConvertable) -> EraConvertedResult {
+    public func convert(to eraType: EraConvertable) -> EraConvertedResult {
         let year = eraType.compareYear
         return EraConvertedResult(
             eraType: convert(with: year),
-            year: eraType.compareYear - compareYear
+            year: compareYear - year + 1
         )
     }
 }
