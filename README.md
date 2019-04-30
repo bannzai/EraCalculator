@@ -1,6 +1,6 @@
 # EraCalculator
 Last library of 平成.
-So, in Japan change era. This libray is my memorial library.
+So, in Japan change era. This library is my memorial library.
 
 ## Usage
 EraCalculator can convert other Era years.
