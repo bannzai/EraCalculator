@@ -7,10 +7,13 @@
 
 import Foundation
 
+typealias TimeIntervalType = Foundation.TimeInterval
 struct Const {
-    static let second: Int = 1
-    static let minute: Int = second * 60
-    static let hour: Int = minute * 60
-    static let day: Int = hour * 24
-    static let weekday: Int = day * 7
+    struct TimeInterval {
+        static let second: TimeIntervalType = 1
+        static let minute: TimeIntervalType = second * 60
+        static let hour: TimeIntervalType = minute * 60
+        static let day: TimeIntervalType = hour * 24
+        static let weekday: TimeIntervalType = day * 7
+    }
 }

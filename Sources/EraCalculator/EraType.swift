@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum EraType {
+public enum EraType: Int, CaseIterable {
     case 大化
     case 白雉
     case 朱鳥
