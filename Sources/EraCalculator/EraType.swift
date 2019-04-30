@@ -265,7 +265,7 @@ extension EraType {
 }
 
 extension EraType {
-    var start: Int {
+    var startYear: Int {
         switch self {
         case .大化:    return 645
         case .白雉:    return 650
@@ -518,7 +518,7 @@ extension EraType {
         }
     }
     
-    var end: Int {
+    var endYear: Int {
         switch self {
         case .大化:    return 650
         case .白雉:    return 686
@@ -776,6 +776,12 @@ extension EraType {
 
 
 extension EraType {
+    public var startMonth: Int {
+        return startMonthAndDayComponent.month
+    }
+    public var startDay: Int {
+        return startMonthAndDayComponent.day
+    }
     var startMonthAndDayComponent: (month: Int, day: Int) {
         switch self {
         case .大化:    return (month: 7, day: 17)
