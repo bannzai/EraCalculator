@@ -25,18 +25,19 @@ class EraTypeTest: XCTestCase {
 
     func testConvert() {
         do {
-        let expected = EraConvertedResult(eraType: .平成, year: 31)
+        let expected = Era(eraType: .平成, year: 31)
         let got = EraType.令和.convert(to: EraType.平成)
         XCTAssertEqual(got.eraType, expected.eraType)
         XCTAssertEqual(got.year, expected.year)
         }
         
         do {
-            let expected = EraConvertedResult(eraType: .大化, year: 1375)
+            let expected = Era(eraType: .大化, year: 1375)
             let got = EraType.令和.convert(to: EraType.大化)
             XCTAssertEqual(got.eraType, expected.eraType)
             XCTAssertEqual(got.year, expected.year)
             XCTAssertEqual(got.description, "大化 1375年")
+            print(got)
         }
     }
 

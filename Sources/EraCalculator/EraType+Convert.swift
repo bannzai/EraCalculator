@@ -8,7 +8,7 @@
 import Foundation
 
 
-public struct EraConvertedResult {
+public struct Era {
     public let eraType: EraType
     public let year: Int
     
@@ -21,7 +21,7 @@ public struct EraConvertedResult {
     }
 }
 
-extension EraConvertedResult: CustomStringConvertible {
+extension Era: CustomStringConvertible {
     public var description: String {
         return "\(eraType.gengo) \(year)年"
     }
@@ -55,9 +55,9 @@ extension EraType {
             .filter { $0.compareYear == year }
             .first!
     }
-    public func convert(to eraType: EraConvertable) -> EraConvertedResult {
+    public func convert(to eraType: EraConvertable) -> Era {
         let year = eraType.compareYear
-        return EraConvertedResult(
+        return Era(
             eraType: convert(with: year),
             year: compareYear - year + 1
         )
