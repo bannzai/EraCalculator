@@ -259,13 +259,13 @@ public enum EraType: Int, CaseIterable {
 }
 
 extension EraType {
-    var name: String {
+    public var gengo: String {
         return "\(self)"
     }
 }
 
 extension EraType {
-    var startYear: Int {
+    public var startYear: Int {
         switch self {
         case .大化:    return 645
         case .白雉:    return 650
@@ -518,7 +518,7 @@ extension EraType {
         }
     }
     
-    var endYear: Int {
+    public var endYear: Int {
         switch self {
         case .大化:    return 650
         case .白雉:    return 686
@@ -782,7 +782,7 @@ extension EraType {
     public var startDay: Int {
         return startMonthAndDayComponent.day
     }
-    var startMonthAndDayComponent: (month: Int, day: Int) {
+    fileprivate var startMonthAndDayComponent: (month: Int, day: Int) {
         switch self {
         case .大化:    return (month: 7, day: 17)
         case .白雉:    return (month: 3, day: 22)
