@@ -36,6 +36,7 @@ class EraTypeTest: XCTestCase {
             let got = EraType.令和.convert(to: EraType.大化)
             XCTAssertEqual(got.eraType, expected.eraType)
             XCTAssertEqual(got.year, expected.year)
+            XCTAssertEqual(got.description, "大化 1375年")
         }
     }
 

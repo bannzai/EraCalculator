@@ -21,6 +21,12 @@ public struct EraConvertedResult {
     }
 }
 
+extension EraConvertedResult: CustomStringConvertible {
+    public var description: String {
+        return "\(eraType.gengo) \(year)年"
+    }
+}
+
 public protocol EraConvertable {
     var compareYear: Int { get }
 }
