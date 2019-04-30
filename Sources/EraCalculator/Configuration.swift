@@ -9,11 +9,14 @@ import Foundation
 
 public struct Configuration {
     public var calendar: Calendar
+    public var timeZone: TimeZone
     
     public init(
-        calendar: Calendar = Calendar(identifier: .gregorian)
+        calendar: Calendar = Calendar(identifier: .gregorian),
+        timeZone: TimeZone = .current
         ) {
         self.calendar = calendar
+        self.timeZone = timeZone
     }
 }
 
